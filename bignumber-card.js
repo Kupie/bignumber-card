@@ -55,13 +55,15 @@ class BigNumberCard extends HTMLElement {
     card.appendChild(content);
     card.appendChild(title);
     card.appendChild(style);
+    /* I want the card to only show info, not be clickable/touchable
     card.addEventListener('click', event => {
       this._fire('hass-more-info', { entityId: cardConfig.entity });
     });
+    */
     root.appendChild(card);
     this._config = cardConfig;
   }
-
+/*
   _fire(type, detail, options) {
     const node = this.shadowRoot;
     options = options || {};
@@ -75,7 +77,7 @@ class BigNumberCard extends HTMLElement {
     node.dispatchEvent(event);
     return event;
   }
-
+*/
   _computeSeverity(stateValue, sections) {
     if (stateValue === undefined || stateValue === null) return;
     const numberValue = Number(stateValue);
